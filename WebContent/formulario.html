@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="ProcesarFormulario" method="GET">
+<label>Ruc</label>
+<input type="text" name="ruc" id="ruc"></input>
+<br>
+<label>Raz&oacute;n Social</label>
+<input type="text" name="razonsocial" id="razonsocial"></input>
+<br>
+<label>Password</label>
+<input type="password" name="password" id="password"></input>
+<br>
+<textarea name="observaciones"></textarea>
+<br>
+<label>Persona Juridica</label>
+ <input type="checkbox" name="personajuridica" checked="checked"></input>
+<br>
+<label>Gran Contribuyente</label>
+<input type="checkbox" name="grancontribuyente" checked="checked"></input>
+<br>
+<label>Sexo</label>
+<select name="sexo">
+<option value="M">Masculino </option>
+<option value="F">Femenino </option>
+</select>
+ 
+<br>
+<label>Actividad(es) Economica</label>
+<br>
+<select name="activEconomica" id ="activEconomica" multiple="multiple">
+ <option value="1"> Informatica </option>
+ <option value="2"> Contabilidad </option>
+ <option value="3"> Agronomia </option>
+</select>
+<br>
+<label>Tipo IVA</label><br>
+<input type="radio" name="tipoIva" id="tipoIva" value="1">IVA 5%<br>
+<input type="radio" name="tipoIva" id="tipoIva" value="2">IVA 10%<br>
+<input type="submit" name="ingresar"/>
+
+</form>
+</body>
+</html>
