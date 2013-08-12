@@ -51,7 +51,7 @@
   </filter>
   <filter-mapping>
     <filter-name>FiltroLogin</filter-name>
-    <url-pattern>/menu.html</url-pattern>
+    <url-pattern>/images/*</url-pattern>
   </filter-mapping>
   <listener>
     <listener-class>py.edu.ucsa.listener.SessionListener</listener-class>
@@ -65,5 +65,24 @@
   <servlet-mapping>
     <servlet-name>CerrarSession</servlet-name>
     <url-pattern>/CerrarSession</url-pattern>
+  </servlet-mapping>
+  <filter>
+    <display-name>FiltroHTML</display-name>
+    <filter-name>FiltroHTML</filter-name>
+    <filter-class>py.edu.ucsa.filters.FiltroHTML</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>FiltroHTML</filter-name>
+    <url-pattern>/formulario.html</url-pattern>
+  </filter-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ProfesorServlet</display-name>
+    <servlet-name>ProfesorServlet</servlet-name>
+    <servlet-class>py.edu.ucsa.servlets.ProfesorServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ProfesorServlet</servlet-name>
+    <url-pattern>/ProfesorServlet</url-pattern>
   </servlet-mapping>
 </web-app>

@@ -6,6 +6,7 @@ import py.edu.ucsa.dao.impl.hibernate.AlumnoDAOHibernateImpl;
 import py.edu.ucsa.dao.impl.hibernate.AuditoriaDAOHibernateImpl;
 import py.edu.ucsa.dao.impl.hibernate.AutenticacionDAO;
 import py.edu.ucsa.dao.impl.hibernate.AutenticaionDAOHibernateImpl;
+import py.edu.ucsa.dao.impl.hibernate.ProfesorDAOHibernateImpl;
 
 
 public class DAOFactory {
@@ -28,6 +29,11 @@ public class DAOFactory {
 	public static AuditoriaDAO getAuditoriaDAO()
 	{
 		return new AuditoriaDAOHibernateImpl();
+	}
+	
+	public static ProfesorDAO getProfesorDAO()
+	{
+		return new ProfesorDAOHibernateImpl();
 	}
 
 }

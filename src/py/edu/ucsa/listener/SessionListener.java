@@ -23,10 +23,10 @@ public class SessionListener implements HttpSessionListener {
 	/**
      * @see HttpSessionListener#sessionCreated(HttpSessionEvent)
      */
-    public void sessionCreated(HttpSessionEvent evento) {
+    public void sessionCreated(HttpSessionEvent evento) 
+    {
         //
-    	System.out.println("Registrar Inicio de session : " + evento.getSession().getId());
-    	
+    	System.out.println("Registrar Inicio de session : " + evento.getSession().getId());    	
     	AuditoriaDTO auditoria = new AuditoriaDTO();
     	auditoria.setEstado("logueado");
     	auditoria.setSession_id(evento.getSession().getId());
@@ -39,7 +39,7 @@ public class SessionListener implements HttpSessionListener {
      * @see HttpSessionListener#sessionDestroyed(HttpSessionEvent)
      */
     public void sessionDestroyed(HttpSessionEvent arg0) {
-        // TODO Auto-generated method stub
+    	System.out.println("Session Listener > Cerrar Sesion");
     }
 	
 }

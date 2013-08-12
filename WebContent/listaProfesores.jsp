@@ -62,10 +62,10 @@
 <link rel="stylesheet" type="text/css" href="css/DT_bootstrap.css">
 <script type="text/javascript"  src="js/jquery.simplemodal.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Listado de Alumnos</title>
+<title>Listado de Profesores</title>
 </head>
 <body>
-<div class="navbar navbar-fixed-top">
+<div class="navbar navbar-fixed-top" style='margin-bottom:30px;'>
   <div class="navbar-inner">
     <div class="container">
 	<!--navigation does here-->
@@ -74,12 +74,69 @@
 		<li class='dropdown'><a href="menu.html" >Inicio</a></li>
 		<li><a href="AlumnoServlet" >Lista Alumnos</a></li>
 		<li><a href="ProfesorServlet" >Lista Profesores</a></li>
-		<li><a href="#Salir" >Salir</a></li>
+		<li><a href="CerrarSession" >Salir</a></li>
 		</ul>
 	</nav>
 			
     </div>
   </div>
 </div> 
+<br></br>
+<h2>Lista de Profesores </h2>
+<div style='float:right;margin-top:-20px;'>
+<a href="ProfesorServlet?accion=ingresar"><button  type="button" class="btn btn-info" id="btnAgregar"><i class="icon-upload icon-white"></i> Agregar Profesor</button></a>
+<br></br>
+</div>
+<table  cellpadding="0" cellspacing="0" border="0" class="display" id="example" width="100%" >
+<thead>
+<tr>
+<th>#Nro</th>
+<th>Nombre </th>
+<th>Apellido </th>
+<th>Materia </th>
+<th>Opciones </th>
+</tr>
+</thead>
+<tbody>
+<% List<ProfesorDTO> listaProfesores =(List <ProfesorDTO>) session.getAttribute("listaProfesores"); %>
+<% 
+for(int i=0; i < listaProfesores.size(); i++)
+{
+	%>
+	<tr>
+		<td>
+		<%=listaProfesores.get(i).getId()%>
+		</td>
+		<td>
+		<%=listaProfesores.get(i).getNombre()%>
+		</td>
+		<td>
+		<%=listaProfesores.get(i).getApellido()%>
+		</td>
+		<td>
+		<%=listaProfesores.get(i).getMateria()%>
+		</td>
+		<td>		
+			<a href="ProfesorServlet?accion=editar&alumno=<%=listaProfesores.get(i).getId()%>" title="Modificar"><button><i class="icon-edit"> </i> </button></a>					
+			<a href="ProfesorServlet?accion=eliminar&alumno=<%=listaProfesores.get(i).getId()%>" title="Eliminar"><button><i class="icon-remove-circle"></i></button> </a>	
+		</td> 
+	</tr>
+	<%					
+}
+%>
 
+</table>
+<script type="text/javascript" charset="utf-8">
+	$(document).ready(function(){
+		$('#example').dataTable( {
+		"sDom": "<'row'<'span6'l><'span6'f>r>t<'row'<'span6'i><'span6'p>>",
+		"sPaginationType": "bootstrap",
+		
+		"oLanguage": {
+			"sLengthMenu": "_MENU_ records per page"
+		}
+		} );
+	});			
+</script>
 </body>
+</html>

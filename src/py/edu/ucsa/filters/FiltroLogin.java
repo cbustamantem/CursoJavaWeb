@@ -77,7 +77,7 @@ public class FiltroLogin implements Filter {
 		else
 		{
 			System.out.println("FILTER>iniciando filtro 1 USUARIO FUERA DE LA SESSION");
-			request.getRequestDispatcher("login.html").forward(request,response);
+			request.getRequestDispatcher("/login.html").forward(request,response);
 		}
 		
 		filterchain.doFilter(request, response);
